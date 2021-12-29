@@ -23,18 +23,14 @@ Route::prefix('admin')->group(function(){
     Route::get('/login',[AdminController::class,'Index'])->name('login_form');
     Route::post('/login/owner',[AdminController::class,'Login'])->name('admin.login');
     Route::get('/dashboard',[AdminController::class,'Dashboard'])->name('admin.dashboard');
+    Route::get('/about',[AboutController::class,'About'])->name('about.section');
+
 });
 /* ------------------End---Admin Routes ---------------- */
-
-
+// 
 /* ---------------------About Routes ---------------- */
 
-Route::prefix('about')->group(function(){
 
-    Route::get('/all',[AdminController::class,'Index'])->name('about.section');
-    Route::post('/login/owner',[AdminController::class,'Login'])->name('admin.login');
-    Route::get('/dashboard',[AdminController::class,'Dashboard'])->name('admin.dashboard');
-});
 
 /* ------------------End---About Routes ---------------- */
 
