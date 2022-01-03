@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AboutController;
+use App\Models\About;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ Route::prefix('admin')->group(function(){
     Route::post('/login/owner',[AdminController::class,'Login'])->name('admin.login');
     Route::get('/dashboard',[AdminController::class,'Dashboard'])->name('admin.dashboard');
     Route::get('/about',[AboutController::class,'About'])->name('about.section');
-    Route::post('/about/Add/profile',[AboutController::class,'AddProfile'])->name('about.store');
+    Route::post('/Add/profile',[AboutController::class,'AddProfile'])->name('about.store');
 
 });
 /* ------------------End---Admin Routes ---------------- */
@@ -36,7 +37,8 @@ Route::prefix('admin')->group(function(){
 /* ------------------End---About Routes ---------------- */
 
 Route::get('/', function () {
-    return view('index');
+    $abouts = About::all();
+    return view('index',compact('abouts'));
 });
 
 Route::get('/dashboard', function () {

@@ -10,14 +10,17 @@
                             <h2>About me</h2>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p><img src="{{asset('frontend/assets/images/img-01.jpg')}}" class="img-responsive" alt=""></p>
+                                    @foreach ($abouts as $about )
+                                        
+                                    
+                                    <p><img src="{{asset($about->img)}}" class="img-responsive" alt=""></p>
                                 </div>
                                 <div class="col-md-8">
 
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.</p>
+                                    <p>{{$about->about}}
+                                        </p>
                                     <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+@endforeach
                                 </div>
                             </div>
                         </div>
