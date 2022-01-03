@@ -19,7 +19,7 @@ class CreateAboutsTable extends Migration
             $table->string('position');
             $table->string('twt_link');
             $table->string('git_link');
-            $table->text('about');
+            $table->longText('about');
             $table->string('img');
             $table->timestamps();
         });

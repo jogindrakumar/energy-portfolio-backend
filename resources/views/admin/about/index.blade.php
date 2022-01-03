@@ -12,9 +12,12 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Name</th>
+      <th scope="col">Position</th>
+      <th scope="col">Tweet Link</th>
+      <th scope="col">Git Link</th>
+      <th scope="col">About</th>
+      <th scope="col">Image</th>
     </tr>
   </thead>
   <tbody>
@@ -22,39 +25,67 @@
       <th scope="row">1</th>
       <td>Mark</td>
       <td>Otto</td>
-      <td>@mdo</td>
+      <td>Otto</td>
+      <td>Otto</td>
+      <td>Otto</td>
+      <td>Otto</td>
+      <td><a href="{{url('about/edit/')}}" class="btn btn-warning">Edit</a></td>
+      
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    
   </tbody>
 </table>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-4">
+
+          <h5>ADD About</h5>
 
             {{-- about form code here  --}}
-            <form>
+            <form action="{{route('about.store')}}" method="POST" enctype="multipart/form-data">
+              @csrf
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    @error('name')
+      <span class="text-danger">{{$message}}</span>
+    @enderror
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <label for="exampleInputPassword1" class="form-label">Position</label>
+    <input type="text" class="form-control" id="exampleInputPassword1">
+    @error('position')
+      <span class="text-danger">{{$message}}</span>
+    @enderror
   </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Tweet Link</label>
+    <input type="text" class="form-control" id="exampleInputPassword1">
+    @error('twt_link')
+      <span class="text-danger">{{$message}}</span>
+    @enderror
   </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Git Link</label>
+    <input type="text" class="form-control" id="exampleInputPassword1">
+    @error('git_link')
+      <span class="text-danger">{{$message}}</span>
+    @enderror
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">About Description</label>
+    <input type="text" class="form-control" id="exampleInputPassword1">
+    @error('about')
+      <span class="text-danger">{{$message}}</span>
+    @enderror
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Profile Image</label>
+    <input type="file" class="form-control" id="exampleInputPassword1">
+    @error('img')
+      <span class="text-danger">{{$message}}</span>
+    @enderror
+  </div>
+  
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
         </div>
