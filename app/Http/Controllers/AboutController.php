@@ -67,6 +67,42 @@ return redirect()->back()->with('success','profile add successfully!');
     // update about profile
 
     public function Update(Request $request , $id){
+  $validatedData = $request->validate([
+    'name' => ['required'],
+    'position' => ['required'],
+    'twt_link' => ['required'],
+    'git_link' => ['required'],
+    'about' => ['required'],
+]);
+$img = $request->file('img');
+$old_img = $request->old_img;
+if($img){
+    $name_gen = hexdec(uniqid());
+$img_ext = strtolower($img->getClientOriginalExtension());
+$img_name = $name_gen.'.'.$img_ext;
+$upload_location = 'images/profile/';
+$last_image = $upload_location.$img_name;
+$img->move($upload_location,$img_name);
+unlink($old_img);
+
+About::find($id)->update([
+        'img'   =>$last_image,
+        'updated_at' => Carbon::now()
+]);
+
+return redirect()->route('about.section')->with('success','profile photo updated successfully!');
+}else{
+    About::find($id)->update([
+        'name' => $request->name,
+        'position' => $request->position,
+        'twt_link' => $request->twt_link,
+        'git_link' => $request->git_link,
+        'about' => $request->about,
+        'updated_at' => Carbon::now()
+]);
+
+return redirect()->route('about.section')->with('success','profile details updated successfully!');
+}
 
     }
 }

@@ -17,7 +17,7 @@
         <br>
 
             {{-- about form code here  --}}
-            <form action="{{url('about/update/'.$abouts->id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{url('admin/about/update/'.$abouts->id)}}" method="POST" enctype="multipart/form-data">
               @csrf
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
