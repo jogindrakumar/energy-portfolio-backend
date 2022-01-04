@@ -34,7 +34,7 @@
       <td>{{$about->about}}</td>
       <td><img src="{{asset($about->img)}}" alt="" style="height: 50px;Width:50px;"></td>
       
-      <td><a href="{{url('about/edit/')}}" class="btn btn-warning">Edit</a></td>
+      <td><a href="{{url('admin/about/edit/'.$about->id)}}" class="btn btn-warning">Edit</a></td>
        
     </tr>
     @endforeach

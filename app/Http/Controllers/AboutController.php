@@ -54,4 +54,19 @@ About::insert([
 
 return redirect()->back()->with('success','profile add successfully!');
     }
+
+
+
+    // edit about profile 
+
+    public function EditProfile($id){
+        $abouts = About::find($id);
+        return view('admin.about.edit',compact('abouts'));
+    }
+
+    // update about profile
+
+    public function Update(Request $request , $id){
+
+    }
 }

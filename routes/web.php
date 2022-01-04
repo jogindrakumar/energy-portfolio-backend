@@ -26,6 +26,9 @@ Route::prefix('admin')->group(function(){
     Route::get('/dashboard',[AdminController::class,'Dashboard'])->name('admin.dashboard');
     Route::get('/about',[AboutController::class,'About'])->name('about.section');
     Route::post('/Add/profile',[AboutController::class,'AddProfile'])->name('about.store');
+    Route::get('/about/edit/{id}',[AboutController::class,'EditProfile']);
+    Route::post('/about/update/{id}',[AboutController::class,'Update']);
+
 
 });
 /* ------------------End---Admin Routes ---------------- */
