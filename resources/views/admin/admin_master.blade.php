@@ -292,11 +292,11 @@
                     <li class="single-nav-wrapper">
                         <a class="has-arrow menu-item" href="#" aria-expanded="false">
                             <span class="left-icon"><i class="fas fa-table"></i></span>
-                            <span class="menu-text">table</span>
+                            <span class="menu-text">project</span>
                         </a>
                         <ul class="dashboard-menu">
-                            <li><a href="basic_table.html">Basic table</a></li>
-                            <li><a href="data_table.html">data table</a></li>
+                            <li><a href="{{route('project.section')}}"><i class="far fa-eye text-warning"></i>  View </a> </li>
+                            <li><a href="{{route('project.create')}}"> <i class="fas fa-plus text-success"></i>  Add</a></li>
                         </ul>
                     </li>
                     <li class="single-nav-wrapper">

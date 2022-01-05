@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 class AboutController extends Controller
 {
     //front end index
- public function AboutALL(){
-        $abouts = About::all();
-        return view('index',compact('abouts')); 
-     }
+//  public function AboutALL(){
+//         $abouts = About::all();
+//         return view('index',compact('abouts')); 
+//      }
 
 
     //admin 
