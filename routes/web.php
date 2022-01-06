@@ -34,9 +34,12 @@ Route::prefix('admin')->group(function(){
     Route::post('/about/update/{id}',[AboutController::class,'Update']);
 
     //project routes
-Route::get('/project/all',[ProjectController::class,'AllProject'])->name('project.section');
-Route::get('/project/create',[ProjectController::class,'CreateProject'])->name('project.create');
-Route::post('/project/add',[ProjectController::class,'AddProject'])->name('project.store');
+    Route::get('/project/all',[ProjectController::class,'AllProject'])->name('project.section');
+    Route::get('/project/create',[ProjectController::class,'CreateProject'])->name('project.create');
+    Route::post('/project/add',[ProjectController::class,'AddProject'])->name('project.store');
+    Route::get('/project/edit/{id}',[ProjectController::class,'EditProject']);
+    Route::post('/project/update/{id}',[ProjectController::class,'Update']);
+    Route::get('/project/delete/{id}',[ProjectController::class,'DeleteProject']);
 
 
 
@@ -51,7 +54,8 @@ Route::post('/project/add',[ProjectController::class,'AddProject'])->name('proje
 
 Route::get('/', function () {
     $abouts = About::all();
-    return view('index',compact('abouts'));
+    $projects = Project::all();
+    return view('index',compact('abouts','projects'));
 });
 
 Route::get('/dashboard', function () {

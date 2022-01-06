@@ -30,21 +30,16 @@
                         <div class="card-block">
                             <h2>Projects</h2>
                             <div class="row">
+                                @foreach ($projects as $project )
+                                    
+                               
                                 <div class="col-md-4">
-                                    <img src="{{asset('frontend/assets/images/img-02.jpg')}}" class="img-responsive" alt="">
-                                    <h3 class="h5">Amelia App</h3>
+                                    <img src="{{asset($project->project_img)}}" class="img-responsive" alt="">
+                                    <h3 class="h5">{{$project->project_title}}</h3>
                                     <p>June 2017</p>
                                 </div>
-                                <div class="col-md-4">
-                                    <img src="{{asset('frontend/assets/images/img-03.jpg')}}" class="img-responsive" alt="">
-                                    <h3 class="h5">Portland</h3>
-                                    <p>March 2017</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="{{asset('frontend/assets/images/img-04.jpg')}}" class="img-responsive" alt="">
-                                    <h3 class="h5">Denz for Nilon</h3>
-                                    <p>Jan 2017</p>
-                                </div>
+                              
+                                @endforeach
                             </div>
                         </div>
                     </div>

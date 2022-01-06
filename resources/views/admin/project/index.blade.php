@@ -18,6 +18,12 @@
 </div>
   
 @endif
+ @if (Session::has('error'))
+<div class="alert alert-danger" role="alert">
+  {{Session::get('error')}}
+</div>
+  
+@endif
 <br>
         </div>
        
@@ -36,8 +42,8 @@
   <div class="card-body">
     <h5 class="card-title">{{$project->project_title}}</h5>
     
-    <a href="#" class="btn btn-warning">Edit</a>
-    <a href="#" class="btn btn-danger">Delete</a>
+    <a href="{{url('admin/project/edit/'.$project->id)}}" class="btn btn-warning">Edit</a>
+    <a href="{{url('admin/project/delete/'.$project->id)}}" class="btn btn-danger">Delete</a>
   </div>
   
 </div>
