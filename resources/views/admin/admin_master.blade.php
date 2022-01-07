@@ -302,12 +302,11 @@
                     <li class="single-nav-wrapper">
                         <a class="has-arrow menu-item" href="#" aria-expanded="false">
                             <span class="left-icon"><i class="fas fa-chart-line"></i></span>
-                            <span class="menu-text">Charts</span>
+                            <span class="menu-text"> <i class="fas fa-briefcase"></i> Works</span>
                         </a>
                         <ul class="dashboard-menu">
-                            <li><a href="chart-float.html">Float Chart</a></li>
-                            <li><a href="chart-float.html">Float Chart</a></li>
-                            <li><a href="chart-float.html">Float Chart</a></li>
+                            <li><a href="{{route('work.section')}}"><i class="far fa-eye text-warning"></i>  View </a> </li>
+                            <li><a href="{{route('work.create')}}"> <i class="fas fa-plus text-success"></i>  Add</a></li>
                         </ul>
                     </li>
                     <li class="single-nav-wrapper">

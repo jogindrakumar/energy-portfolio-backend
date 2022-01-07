@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\WorkController;
 use App\Models\About;
 use App\Models\Project;
+use App\Models\Work;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +42,19 @@ Route::prefix('admin')->group(function(){
     Route::get('/project/edit/{id}',[ProjectController::class,'EditProject']);
     Route::post('/project/update/{id}',[ProjectController::class,'Update']);
     Route::get('/project/delete/{id}',[ProjectController::class,'DeleteProject']);
+
+
+    // work route
+    
+
+     Route::get('/work/all',[WorkController::class,'AllWork'])->name('work.section');
+    Route::get('/work/create',[WorkController::class,'CreateWork'])->name('work.create');
+    Route::post('/work/add',[WorkController::class,'AddWork'])->name('work.store');
+    Route::get('/work/edit/{id}',[WorkController::class,'EditWork']);
+    Route::post('/work/update/{id}',[WorkController::class,'Update']);
+    Route::get('/work/delete/{id}',[WorkController::class,'DeleteWork']);
+
+
 
 
 
