@@ -278,7 +278,7 @@
             <nav class="sidebar-nav">
                 <ul class="metismenu" id="menu1">
                     <li class="single-nav-wrapper">
-                        <a href="index.html" class="menu-item">
+                        <a href="/admin/dashboard" class="menu-item">
                             <span class="left-icon"><i class="fas fa-home"></i></span>
                             <span class="menu-text">home</span>
                         </a>
