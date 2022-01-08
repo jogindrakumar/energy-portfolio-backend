@@ -70,7 +70,8 @@ Route::prefix('admin')->group(function(){
 Route::get('/', function () {
     $abouts = About::all();
     $projects = Project::all();
-    return view('index',compact('abouts','projects'));
+    $works = Work::all();
+    return view('index',compact('abouts','projects','works'));
 });
 
 Route::get('/dashboard', function () {

@@ -46,18 +46,22 @@ return redirect()->route('work.section')->with('success','work add successfully!
     // edit Work
 
     public function EditWork($id){
-        $Works = Work::find($id);
+        $works = Work::find($id);
         return view('admin.work.edit',compact('works'));
     }
 
     // update work work
 
     public function Update(Request $request , $id){
-  $validatedData = $request->validate([
-    'work_title' => ['required'],
-    
-]);
-
+ 
+        Work::find($id)->update([
+        'job_title' => $request->job_title,
+        'from'   =>$request->from,
+        'to'   =>$request->to,
+        'job_description'   =>$request->job_description,
+        'updated_at' => Carbon::now()
+        ]);
+        return redirect()->route('work.section')->with('success','work updated successfully!');
 
     }
 
@@ -65,9 +69,6 @@ return redirect()->route('work.section')->with('success','work add successfully!
     // Delete Work function 
 
     public function DeleteWork($id){
-        $img = Work::find($id);
-        $old_img = $img->Work_img;
-        unlink($old_img);
         Work::find($id)->delete();
        return redirect()->route('work.section')->with('error','work delete successfully');
     }
