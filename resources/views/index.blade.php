@@ -67,51 +67,37 @@
                         <div class="card-block">
                             <h2>Education</h2>
                             <div class="row">
+                                @foreach ($educations as $education)
+                                    
+                               
                                 <div class="col-md-4">
                                     <div class="education-experience">
-                                        <small class="date">2017-2015</small>
-                                        <h3 class="h5 date-title">Design Master</h3>
-                                        <p>Chicago University</p>
+                                        {{-- <small class="date">2017-2015</small> --}}
+                                        <h3 class="h5 date-title">{{$education->title}}</h3>
+                                        <p>{{$education->from}}</p>
                                     </div>
 
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="education-experience">
-                                        <small class="date">2015-2012</small>
-                                        <h3 class="h5 date-title">Metrics Degree</h3>
-                                        <p>Ecole 87</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="education-experience">
-                                        <small class="date">2012-2011</small>
-                                        <h3 class="h5 date-title">Motion Design Course</h3>
-                                        <p>Pascal’s Lee Studio</p>
-                                    </div>
-                                </div>
+                                @endforeach
+                                
                             </div>
                         </div>
                     </div>
 
                     <div class="card">
                         <div class="card-block">
-                            <h2>Language</h2>
+                            <h2>Skills & Level</h2>
                             <div class="row">
+                                @foreach ($skills as $skill )
+                                    
+                               
                                 <div class="col-md-4">
                                     <div class="language-experience">
-                                        <h3 class="h5">English <small>Bilingual</small></h3>
+                                        <h3 class="h5">{{$skill->title}}  <small><span class="badge rounded-pill"> {{$skill->level}}</span></small></h3>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="language-experience">
-                                        <h3 class="h5">French <small>Fluent</small></h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="language-experience">
-                                        <h3 class="h5">Russian <small>Beginner</small></h3>
-                                    </div>
-                                </div>
+                                 @endforeach
+                                
                             </div>
                         </div>
                     </div>

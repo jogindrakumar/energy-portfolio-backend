@@ -5,9 +5,13 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\WorkController;
+use App\Http\Controllers\EducationController;
+use App\Http\Controllers\SkillController;
 use App\Models\About;
 use App\Models\Project;
 use App\Models\Work;
+use App\Models\Education;
+use App\Models\Skill;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +58,25 @@ Route::prefix('admin')->group(function(){
     Route::post('/work/update/{id}',[WorkController::class,'Update']);
     Route::get('/work/delete/{id}',[WorkController::class,'DeleteWork']);
 
+    // Education route
+    
+
+     Route::get('/education/all',[EducationController::class,'AllEducation'])->name('education.section');
+    Route::get('/education/create',[EducationController::class,'CreateEducation'])->name('education.create');
+    Route::post('/education/add',[EducationController::class,'AddEducation'])->name('education.store');
+    Route::get('/education/edit/{id}',[EducationController::class,'EditEducation']);
+    Route::post('/education/update/{id}',[EducationController::class,'Update']);
+    Route::get('/education/delete/{id}',[EducationController::class,'DeleteEducation']);
+
+ // Skills and Level route
+    
+
+     Route::get('/skill/all',[SkillController::class,'AllSkill'])->name('skill.section');
+    Route::get('/skill/create',[SkillController::class,'CreateSkill'])->name('skill.create');
+    Route::post('/skill/add',[SkillController::class,'AddSkill'])->name('skill.store');
+    Route::get('/skill/edit/{id}',[SkillController::class,'EditSkill']);
+    Route::post('/skill/update/{id}',[SkillController::class,'Update']);
+    Route::get('/skill/delete/{id}',[SkillController::class,'DeleteSkill']);
 
 
 
@@ -71,7 +94,9 @@ Route::get('/', function () {
     $abouts = About::all();
     $projects = Project::all();
     $works = Work::all();
-    return view('index',compact('abouts','projects','works'));
+    $educations = Education::all();
+    $skills = Skill::all();
+    return view('index',compact('abouts','projects','works','educations','skills'));
 });
 
 Route::get('/dashboard', function () {

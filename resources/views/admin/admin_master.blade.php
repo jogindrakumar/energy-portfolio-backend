@@ -309,6 +309,29 @@
                             <li><a href="{{route('work.create')}}"> <i class="fas fa-plus text-success"></i>  Add</a></li>
                         </ul>
                     </li>
+
+                        <li class="single-nav-wrapper">
+                        <a class="has-arrow menu-item" href="#" aria-expanded="false">
+                            <span class="left-icon"><i class="fas fa-chart-line"></i></span>
+                            <span class="menu-text"> <i class="fas fa-user-graduate"></i> Education</span>
+                        </a>
+                        <ul class="dashboard-menu">
+                            <li><a href="{{route('education.section')}}"><i class="far fa-eye text-warning"></i>  View </a> </li>
+                            <li><a href="{{route('education.create')}}"> <i class="fas fa-plus text-success"></i>  Add</a></li>
+                        </ul>
+                    </li>
+
+                      <li class="single-nav-wrapper">
+                        <a class="has-arrow menu-item" href="#" aria-expanded="false">
+                            <span class="left-icon"><i class="fas fa-chart-line"></i></span>
+                            <span class="menu-text"><i class="fas fa-laptop-code"></i> Skill & Level</span>
+                        </a>
+                        <ul class="dashboard-menu">
+                            <li><a href="{{route('skill.section')}}"><i class="far fa-eye text-warning"></i>  View </a> </li>
+                            <li><a href="{{route('skill.create')}}"> <i class="fas fa-plus text-success"></i>  Add</a></li>
+                        </ul>
+                    </li>
+
                     <li class="single-nav-wrapper">
                         <a class="has-arrow menu-item" href="#" aria-expanded="false">
                             <span class="left-icon"><i class="fas fa-sort-alpha-down-alt"></i></span>
