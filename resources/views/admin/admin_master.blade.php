@@ -332,47 +332,17 @@
                         </ul>
                     </li>
 
-                    <li class="single-nav-wrapper">
-                        <a class="has-arrow menu-item" href="#" aria-expanded="false">
-                            <span class="left-icon"><i class="fas fa-sort-alpha-down-alt"></i></span>
-                            <span class="menu-text">UI Elements</span>
-                        </a>
-                        <ul class="dashboard-menu">
-                            <li><a href="typography.html">Typography</a></li>
-                            <li><a href="button.html">Buttons</a></li>
-                            <li><a href="notification.html">Notification</a></li>
-                            <li><a href="panels.html">Panels</a></li>
-                            <li><a href="tabs.html">Tab</a></li>
-                            <li><a href="modals.html">Modals</a></li>
-                            <li><a href="progressbars.html">Progressber</a></li>
-                            <li><a href="list.html">List View</a></li>
-                            <li><a href="icheck_toggle_pagination.html">iCheck, Toggle</a></li>
-                            <li><a href="label-badge-alert.html">labels, Badges</a></li>
-                            <li><a href="treeview.html">Tree View</a></li>
-                        </ul>
-                    </li>
-                    <li class="single-nav-wrapper">
-                        <a class="has-arrow menu-item" href="#" aria-expanded="false">
-                            <span class="left-icon"><i class="fas fa-map-marker-alt"></i></span>
-                            <span class="menu-text">Maps</span>
-                        </a>
-                        <ul class="dashboard-menu">
-                            <li><a href="#">Amcharts Maps</a></li>
-                            <li><a href="#">Data Maps</a></li>
-                            <li><a href="#">Jvector Maps</a></li>
-                            <li><a href="#">Google map</a></li>
-                            <li><a href="#">Snazzy Map</a></li>
-                        </ul>
-                    </li>
+                   
+                   
                     <li class="single-nav-wrapper">
                         <a class="has-arrow menu-item" href="#" aria-expanded="false">
                             <span class="left-icon"><i class="far fa-envelope"></i></span>
                             <span class="menu-text">Mailbox</span>
                         </a>
                         <ul class="dashboard-menu">
-                            <li><a href="#">Mailbox</a></li>
-                            <li><a href="#">Mailbox Details</a></li>
-                            <li><a href="#">Compose</a></li>
+                    <li><a href="{{route('contact.section')}}"><i class="far fa-eye text-warning"></i>  View </a> </li>
+                            {{-- <li><a href="#">Mailbox Details</a></li>
+                            <li><a href="#">Compose</a></li> --}}
                         </ul>
                     </li>
                     <li class="single-nav-wrapper">

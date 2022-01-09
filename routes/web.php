@@ -7,11 +7,13 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\ContactController;
 use App\Models\About;
 use App\Models\Project;
 use App\Models\Work;
 use App\Models\Education;
 use App\Models\Skill;
+use App\Models\Contact;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +80,15 @@ Route::prefix('admin')->group(function(){
     Route::post('/skill/update/{id}',[SkillController::class,'Update']);
     Route::get('/skill/delete/{id}',[SkillController::class,'DeleteSkill']);
 
+    // contact route
+    
+    
+
+    Route::get('/contact/all',[ContactController::class,'AllContact'])->name('contact.section');
+    Route::get('/contact/create',[ContactController::class,'CreateContact'])->name('contact.create');
+    Route::post('/contact/add',[ContactController::class,'AddContact'])->name('contact.store');
+    Route::get('/contact/delete/{id}',[ContactController::class,'DeleteContact']);
+
 
 
 
@@ -96,7 +107,8 @@ Route::get('/', function () {
     $works = Work::all();
     $educations = Education::all();
     $skills = Skill::all();
-    return view('index',compact('abouts','projects','works','educations','skills'));
+    $contacts = Contact::all();
+    return view('index',compact('abouts','projects','works','educations','skills','contacts'));
 });
 
 Route::get('/dashboard', function () {

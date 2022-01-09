@@ -163,17 +163,39 @@
                     </div>
 
                     <div class="card">
+                          @if (Session::has('success'))
+                        <div class="alert alert-success" role="alert">
+                        {{Session::get('success')}}
+                        </div>
+                        
+                        @endif
+                        @if (Session::has('error'))
+                        <div class="alert alert-danger" role="alert">
+                        {{Session::get('error')}}
+                        </div>
+                        
+                        @endif
                         <div class="card-block">
                             <h2>Contact</h2>
-                            <form action="" class="reveal-content">
+                            <form action="{{route('contact.store')}}" method="POST" enctype="multipart/form-data" class="reveal-content">
+                                @csrf
                                 <div class="form-group">
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                     @error('email')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+                                     @error('subject')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" rows="5" placeholder="Enter your message"></textarea>
+                                    <textarea class="form-control" rows="5" name="message" placeholder="Enter your message"></textarea>
+                                     @error('message')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class=" btn btn-primary">Send message</button>
