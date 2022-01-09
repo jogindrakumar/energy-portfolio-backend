@@ -15,7 +15,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('frontend/assets/apple-icon-180x180.png')}}">
     <link href="{{asset('frontend/assets/favicon.ico')}}" rel="icon">
 
-    <title>Title page</title>
+    <title>jogindra kumar</title>
 
     <link href="{{asset('frontend/main.d8e0d294.css')}}" rel="stylesheet">
 </head>
@@ -27,24 +27,31 @@
     <main class="content-wrapper">
         <header class="white-text-container section-container">
             <div class="text-center">
-                <h1>I am jogindra kumar</h1>
+                @foreach ($abouts as  $about)
+                    
+               
+                <h1>I am {{$about->name}}</h1> 
                 <p>Web developer</p>
                 <p>
-                    <a class="fa-icon fa-icon-2x" href="https://facebook.com/" title="">
+                    {{-- <a class="fa-icon fa-icon-2x" href="https://facebook.com/" title="">
                         <i class="fa fa-facebook"></i>
-                    </a>
-                    <a class="fa-icon fa-icon-2x" href="https://twitter.com/" title="">
+                    </a> --}}
+                    <a class="fa-icon fa-icon-2x" href="{{$about->twt_link}}" title="">
                         <i class="fa fa-twitter"></i>
                     </a>
-                    <a class="fa-icon fa-icon-2x" href="https://dribbble.com/" title="">
+                     <a class="fa-icon fa-icon-2x" href="{{$about->git_link}}" title="">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    @endforeach
+                    {{-- <a class="fa-icon fa-icon-2x" href="https://dribbble.com/" title="">
                         <i class="fa fa-dribbble"></i>
-                    </a>
-                    <a class="fa-icon fa-icon-2x" href="https://www.linkedin.com/" title="">
+                    </a> --}}
+                    {{-- <a class="fa-icon fa-icon-2x" href="https://www.linkedin.com/" title="">
                         <i class="fa fa-linkedin"></i>
-                    </a>
-                    <a class="fa-icon fa-icon-2x" href="https://vimeo.com/" title="">
+                    </a> --}}
+                    {{-- <a class="fa-icon fa-icon-2x" href="https://vimeo.com/" title="">
                         <i class="fa fa-vimeo"></i>
-                    </a>
+                    </a> --}}
                 </p>
             </div>
         </header>

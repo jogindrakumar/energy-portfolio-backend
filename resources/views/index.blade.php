@@ -150,14 +150,19 @@
                             <h2>Social Network</h2>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <p class="social-buttons"><a href="https://twitter.com/" title=""><span class="social-round-icon fa-icon"><i class="fa fa-twitter"></i></span>@jkumar</a></p>
+                                    <p class="social-buttons"><a href="{{$about->twt_link}}" title=""><span class="social-round-icon fa-icon"><i class="fa fa-twitter"></i></span>@jkumar</a></p>
                                 </div>
-                                <div class="col-md-3">
+
+                                
+                                {{-- <div class="col-md-3">
                                     <p class="social-buttons"><a href="https://www.linkedin.com/" title=""><span class="social-round-icon fa-icon"><i class="fa fa-linkedin"></i></span>jogindra kumar</a></p>
+                                </div> --}}
+                                  <div class="col-md-3">
+                                    <p class="social-buttons"><a href="{{$about->git_link}}" title=""><span class="social-round-icon fa-icon"><i class="fa fa-github"></i></span>jogindra kumar</a></p>
                                 </div>
-                                <div class="col-md-3">
+                                {{-- <div class="col-md-3">
                                     <p class="social-buttons"><a href="https://dribbble.com/" title=""><span class="social-round-icon fa-icon"><i class="fa fa-dribbble"></i></span>jogindra kumar</a></p>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
